@@ -6,9 +6,11 @@ import Home from './components/Home';
 import Products from './components/Products';
 import ProductDetails from './components/ProductDetails';
 import Cart from './components/Cart';
+import ShoeContextProvider from './contexts/ShoeContext';
 
 function App() {
   return (
+    <ShoeContextProvider>
     <div>
       <Header />
       <Routes>
@@ -18,8 +20,8 @@ function App() {
         </Route>
         <Route path='cart' element={<Cart/>} />
       </Routes>
-      
     </div>
+    </ShoeContextProvider>
   );
 }
 
