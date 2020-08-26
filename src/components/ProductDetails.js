@@ -53,10 +53,11 @@ const ProductDetails = () => {
     return ( 
         <div>
             <h3>Product Details</h3>
+            
             <Card className='col-12' variant='outlined'>
                     <CardContent>
                         <h4>{selectedShoe.name}</h4>
-                        <img src={selectedShoe.img} alt={selectedShoe.name} style={{width:'24rem'}} />
+                        <img src={`../${selectedShoe.img}`} alt={selectedShoe.name} style={{width:'24rem'}} />
                         <h5>Price: {selectedShoe.price}</h5>
                         <button className="btn btn-primary" onClick={()=>{
                             dispatch({

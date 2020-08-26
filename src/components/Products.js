@@ -1,4 +1,4 @@
-import React,{useContext} from 'react'
+import React,{useContext,useState} from 'react'
 import {Outlet,useNavigate} from 'react-router-dom';
 import {Card,CardContent} from '@material-ui/core';
 import {ShoeContext} from '../contexts/ShoeContext';
@@ -40,6 +40,7 @@ import {ShoeContext} from '../contexts/ShoeContext';
 
 const Products = () => {
     const {shoes}=useContext(ShoeContext)
+    const [isSelected,setSelected]=useState(true)
     const navigate=useNavigate();
     return ( 
         <div className='row'>
@@ -49,10 +50,10 @@ const Products = () => {
 
                     {Object.entries(shoes).map(([k,{name,img}])=>{
                         return(
-                            <Card className='col-12 col-lg-6' variant='outlined' key={k} onClick={()=>{navigate(k)}}>
+                            <Card className='col-12 col-lg-6' variant='outlined' key={k} onClick={()=>{setSelected(true);navigate(k)}}>
                                 <CardContent>
                                     <h4>{name}</h4>
-                                    <img src={img} alt={name} style={{width:'24rem'}} />
+                                    <img src={`../${img}`} alt={name} style={{width:'24rem'}} />
                                 </CardContent>
                             </Card>
                         )
