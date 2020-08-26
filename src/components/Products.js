@@ -50,7 +50,7 @@ const Products = () => {
 
                     {Object.entries(shoes).map(([k,{name,img}])=>{
                         return(
-                            <Card className='col-12 col-lg-6' variant='outlined' key={k} onClick={()=>{setSelected(true);navigate(k)}}>
+                            <Card className='col-12 col-lg-6' variant='outlined' key={k} onClick={()=>{navigate(k)}}>
                                 <CardContent>
                                     <h4>{name}</h4>
                                     <img src={`../${img}`} alt={name} style={{width:'24rem'}} />
