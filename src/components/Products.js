@@ -1,6 +1,6 @@
 import React from 'react'
 import {Outlet,useNavigate} from 'react-router-dom';
-import {Card,CardContent,makeStyles} from '@material-ui/core';
+import {Card,CardContent} from '@material-ui/core';
 
 const shoes = {
     "air-jordan-3-valor-blue": {
@@ -36,16 +36,8 @@ const shoes = {
     }
   };
 
-  const useStyles = makeStyles({
-    root: {
-      maxWidth: 345,
-    },
-    media: {
-      height: 140,
-    },
-  });
+
 const Products = () => {
-    const classes=useStyles();
     const navigate=useNavigate();
     return ( 
         <div className='row'>

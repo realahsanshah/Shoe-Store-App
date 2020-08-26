@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React from 'react';
 import {useParams} from 'react-router-dom';
 import {Card,CardContent} from '@material-ui/core';
 
@@ -40,8 +40,7 @@ const shoes = {
 const ProductDetails = () => {
     const {productId}=useParams();
     const selectedShoe=shoes[productId]
-    
-    const [quantity,setQuantity]=useState(1);   
+
 
     if(!selectedShoe){
         return <h3>Shoe not available</h3>
