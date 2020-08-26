@@ -2,6 +2,8 @@ import React,{useContext} from 'react';
 import {useParams} from 'react-router-dom';
 import {Card,CardContent} from '@material-ui/core';
 import {ShoeContext} from '../contexts/ShoeContext';
+import {CartContext} from '../contexts/CartContext';
+import {addIntoCart} from '../reducers/ActionTypes'
 
 
 // const shoes = {
@@ -42,6 +44,7 @@ const ProductDetails = () => {
     const {shoes}=useContext(ShoeContext)
     const {productId}=useParams();
     const selectedShoe=shoes[productId]
+    const {dispatch}=useContext(CartContext);
 
 
     if(!selectedShoe){
@@ -55,7 +58,12 @@ const ProductDetails = () => {
                         <h4>{selectedShoe.name}</h4>
                         <img src={selectedShoe.img} alt={selectedShoe.name} style={{width:'24rem'}} />
                         <h5>Price: {selectedShoe.price}</h5>
-                        <button className="btn btn-primary">Add to Cart</button>
+                        <button className="btn btn-primary" onClick={()=>{
+                            dispatch({
+                                type:addIntoCart,
+                                productId:productId
+                            })
+                        }}>Add to Cart</button>
                     </CardContent>
             </Card>
         </div>

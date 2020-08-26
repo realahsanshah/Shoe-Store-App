@@ -1,5 +1,5 @@
 import React,{createContext,useReducer} from 'react'
-import {CartReducer} from '../reducers/CartReducer';
+import {CartReducer} from '../reducers/CartReducers';
 
 const CART=[];
 
