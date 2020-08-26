@@ -1,8 +1,10 @@
 import React from 'react';
 import './App.css';
 import {Routes,Route} from 'react-router-dom';
-import Header from './components/header.js';
-import Home from './components/home.js';
+import Header from './components/Header';
+import Home from './components/Home';
+import Products from './components/Products';
+import Cart from './components/Cart';
 
 function App() {
   return (
@@ -10,6 +12,8 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='products' element={<Products/>} />
+        <Route path='cart' element={<Cart/>} />
       </Routes>
       
     </div>
