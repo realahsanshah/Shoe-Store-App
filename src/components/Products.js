@@ -1,4 +1,4 @@
-import React,{useContext,useState} from 'react'
+import React,{useContext} from 'react'
 import {Outlet,useNavigate} from 'react-router-dom';
 import {Card,CardContent} from '@material-ui/core';
 import {ShoeContext} from '../contexts/ShoeContext';
@@ -40,7 +40,7 @@ import {ShoeContext} from '../contexts/ShoeContext';
 
 const Products = () => {
     const {shoes}=useContext(ShoeContext)
-    const [isSelected,setSelected]=useState(true)
+    // const [isSelected,setSelected]=useState(true)
     const navigate=useNavigate();
     return ( 
         <div className='row'>
