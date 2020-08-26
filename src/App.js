@@ -13,8 +13,9 @@ function App() {
   return (
     <ShoeContextProvider>
       <CartContextProvider>
-      <div>
+      
         <Header />
+        <div className='container'>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='products' element={<Products/>}>

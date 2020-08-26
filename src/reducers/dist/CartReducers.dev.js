@@ -18,13 +18,24 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 var CartReducer = function CartReducer(state, action) {
   switch (action.type) {
     case _ActionTypes.addIntoCart:
-      console.log("state is ".concat(state, " and action ").concat(action.productId));
-      return [].concat(_toConsumableArray(state), [action.productId]);
+      if (!state.some(function (productId) {
+        return productId === action.productId;
+      })) {
+        console.log("state is ".concat(state, " and action ").concat(action.productId));
+        return [].concat(_toConsumableArray(state), [action.productId]);
+      } else {
+        alert("Item already in the cart");
+        return state;
+      }
 
     case _ActionTypes.removeFromCart:
-      state = state.filter(function (dish) {
-        return dish.id !== action.id;
+      state = state.filter(function (productId) {
+        return productId !== action.productId;
       });
+      return state;
+
+    case _ActionTypes.checkOut:
+      state = [];
       return state;
 
     default:
