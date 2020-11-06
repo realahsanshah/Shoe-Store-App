@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {Routes,Route} from 'react-router-dom';
+import {Routes,Route,Navigate} from 'react-router-dom';
 import Header from './components/Header';
 import Products from './components/Products';
 import ProductDetails from './components/ProductDetails';
@@ -16,7 +16,7 @@ function App() {
         <Header />
         <div className='container'>
         <Routes>
-          {/* <Route path='/' element={<Products />} /> */}
+  <Route path='/' element={<Navigate to="/products"/>}/>
           <Route path='products' element={<Products/>}>
             <Route path=':productId' element={<ProductDetails />} />
           </Route>

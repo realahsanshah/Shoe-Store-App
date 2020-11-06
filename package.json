@@ -13,7 +13,7 @@
     "history": "5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-router-dom": "^6.0.0-beta.0",
+    "react-router-dom": "6.0.0-beta.0",
     "react-scripts": "3.4.1",
     "reactstrap": "^8.5.1"
   },
